@@ -1,0 +1,29 @@
+.publish-form {
+  width: 1000px;
+  margin: 70px auto;
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  border: 1px solid salmon;
+}
+
+.form-part {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-item input {
+  width: 400px;
+}

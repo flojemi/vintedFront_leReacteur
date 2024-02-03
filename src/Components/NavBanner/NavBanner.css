@@ -1,0 +1,89 @@
+.NavBanner {
+  width: 100vw;
+  height: 50px;
+  padding: 0 50px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  border: 1px solid grey;
+  background-color: white;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 5px;
+  background-color: #f4f6f7;
+}
+
+.search-bar input {
+  min-width: 400px;
+  background-color: #f4f6f7;
+  border: none;
+}
+
+.white-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.white-button {
+  display: inline-block;
+  height: 30px;
+  padding: 0 20px;
+
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  color: #027782;
+
+  background-color: white;
+  border: 1px solid #027782;
+  border-radius: 5px;
+}
+
+.green-button {
+  display: inline-block;
+  height: 30px;
+  padding: 0 20px;
+
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  color: white;
+
+  background-color: #027782;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.red-button {
+  display: inline-block;
+  height: 30px;
+  padding: 0 20px;
+
+  text-align: center;
+  line-height: 30px;
+  color: white;
+
+  background-color: rgba(180, 12, 12, 0.828);
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.red-button:hover {
+  cursor: pointer;
+}

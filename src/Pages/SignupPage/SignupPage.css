@@ -1,0 +1,27 @@
+.signup-form-container {
+  height: 400px;
+  width: 400px;
+  margin: 70px auto;
+  border: 1px solid pink;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-itself {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.newsletter_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}

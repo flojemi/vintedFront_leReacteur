@@ -1,0 +1,14 @@
+.login-form-container {
+  width: 300px;
+  margin: 70px auto;
+  padding: 40px 10px;
+  border: 1px solid yellowgreen;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
