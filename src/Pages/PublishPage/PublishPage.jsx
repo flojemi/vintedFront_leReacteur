@@ -4,13 +4,13 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function PublishPage({ token }) {
+export default function PublishPage({ token, setLoginVisible }) {
   const navigate = useNavigate();
   const fileInputRef = useRef();
 
   useEffect(() => {
     // TOFIX : Adapter cette portion qui prend le dessus lors d'un refresh de la page
-    if (!token) navigate("/login");
+    if (!token) setLoginVisible(true);
   }, []);
 
   // Setup states
@@ -77,7 +77,9 @@ export default function PublishPage({ token }) {
   // Returned Jsx
   return (
     <main>
-      {publishSuccessful ? (
+      {!token ? (
+        ""
+      ) : publishSuccessful ? (
         <div className={isLoading ? "loader" : "publish-form"}>
           <p>L'offre a été publiée</p>
           <button

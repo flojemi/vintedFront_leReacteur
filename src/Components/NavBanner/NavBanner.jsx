@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 
 import logoVinted from "../../assets/logoVinted.svg";
 
-export default function NavBanner({ token, setToken }) {
+export default function NavBanner({ token, setToken, setLoginVisible }) {
   const navigate = useNavigate();
 
   // Setup states
@@ -70,9 +70,17 @@ export default function NavBanner({ token, setToken }) {
                 <Link to="/signup" className="white-button">
                   S'inscrire
                 </Link>
-                <Link to="/login" className="white-button">
+                <button
+                  className="white-button"
+                  onClick={() => {
+                    setLoginVisible(true);
+                  }}
+                >
                   Se connecter
-                </Link>
+                </button>
+                {/* <Link to="/login" className="white-button">
+                  Se connecter
+                </Link> */}
               </>
             )}
           </div>

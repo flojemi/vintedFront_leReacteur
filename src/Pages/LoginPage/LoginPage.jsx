@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 
 import axios from "axios";
 
-export default function LoginPage({ setToken }) {
+export default function LoginPage({ setToken, setLoginVisible }) {
   // TODO : ajouter une loading pour montrer à l'utilisateur qu'une action est en cours
 
   const navigate = useNavigate();
@@ -34,14 +34,17 @@ export default function LoginPage({ setToken }) {
         password,
       });
 
+      console.log("data ====>\n", data);
+
       Cookies.set("token", data.data.token);
+      setLoginVisible(false);
       setToken(data.data.token);
-      navigate("/");
+      // navigate("/");
     } catch (error) {
       setEmail("");
       setPassword("");
       setAlertMessage(`${error.response.data.message}.`);
-      // console.log("LoginPage - handleSubmit :\n", error);
+      console.log("LoginPage - handleSubmit :\n", error);
     }
   };
 

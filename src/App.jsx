@@ -15,25 +15,37 @@ import PublishPage from "./Pages/PublishPage/PublishPage";
 // Components
 import NavBanner from "./Components/NavBanner/NavBanner";
 
+// ============================== \\
+// ============ APP ============= \\
+// ============================== \\
+
 function App() {
   const [token, setToken] = useState(null);
+  const [loginVisible, setLoginVisible] = useState(false);
 
+  // Lecture d'un éventuel token
   useEffect(() => {
-    // Récupération du token
     const tokenFromCookie = Cookies.get("token");
     if (tokenFromCookie) setToken(tokenFromCookie);
   }, []);
 
+  // Returned Jsx
   return (
     <Router>
-      <NavBanner token={token} setToken={setToken} />
+      <div
+        className={`app-wrapper ${loginVisible && "blur"}`}
+        onClick={() => {
+          loginVisible && setLoginVisible(false);
+        }}
+      ></div>
+      <NavBanner token={token} setToken={setToken} setLoginVisible={setLoginVisible} />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/login" element={<LoginPage setToken={setToken} />}></Route>
         <Route path="/signup" element={<SignupPage setToken={setToken} />}></Route>
         <Route path="/offer/:id" element={<OfferPage />}></Route>
-        <Route path="/publish" element={<PublishPage token={token} />}></Route>
+        <Route path="/publish" element={<PublishPage token={token} setLoginVisible={setLoginVisible} />}></Route>
       </Routes>
+      {loginVisible && <LoginPage setToken={setToken} setLoginVisible={setLoginVisible} />}
     </Router>
   );
 }

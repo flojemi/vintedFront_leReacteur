@@ -37,27 +37,29 @@ export default function OfferPage() {
       ) : (
         <>
           <div className="img-container">
-            <img src={offerData.product_image} alt="Image descriptive du produit" />
+            <img src={offerData.product_image[0]} alt="Image descriptive du produit" />
           </div>
+
           <div className="product-description">
-            <p>{offerData.product_price} €</p>
+            <p className="offer-price">{offerData.product_price} €</p>
             <div>
               {offerData.product_details.map((detailObj, index) => {
                 const objKeys = Object.keys(detailObj)[0];
 
                 return (
                   <div key={index} className="product-details-container">
-                    <p>{objKeys}</p>
-                    <p>{detailObj[objKeys]}</p>
+                    <p className="key-detail">{objKeys}</p>
+                    <p className="value-detail">{detailObj[objKeys]}</p>
                   </div>
                 );
               })}
             </div>
-            <div>
-              <p>{offerData.product_name}</p>
+            <div className="separator"></div>
+            <div className="product-description-2">
+              <p className="offer-name">{offerData.product_name}</p>
               <p>{offerData.product_description}</p>
             </div>
-            <button>Acheter</button>
+            <button className="green-button">Acheter</button>
           </div>
         </>
       )}
