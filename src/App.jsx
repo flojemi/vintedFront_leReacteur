@@ -43,7 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/signup" element={<SignupPage setToken={setToken} />}></Route>
-        <Route path="/offer/:id" element={<OfferPage />}></Route>
+        <Route path="/offer/:id" element={<OfferPage token={token} />}></Route>
         <Route path="/publish" element={<PublishPage token={token} setLoginVisible={setLoginVisible} />}></Route>
         <Route path="/payment" element={<PaymentPage token={token} setLoginVisible={setLoginVisible} />}></Route>
       </Routes>

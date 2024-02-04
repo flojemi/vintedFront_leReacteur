@@ -17,6 +17,11 @@ export default function LoginPage({ setToken, setLoginVisible }) {
   const [password, setPassword] = useState("");
 
   // Setup handle functions
+  const handleSignupClick = () => {
+    setLoginVisible(false);
+    navigate("/signup");
+  };
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -34,12 +39,9 @@ export default function LoginPage({ setToken, setLoginVisible }) {
         password,
       });
 
-      console.log("data ====>\n", data);
-
       Cookies.set("token", data.data.token);
       setLoginVisible(false);
       setToken(data.data.token);
-      // navigate("/");
     } catch (error) {
       setEmail("");
       setPassword("");
@@ -48,18 +50,26 @@ export default function LoginPage({ setToken, setLoginVisible }) {
     }
   };
 
+  // ============================= \\
+  // ============================= \\
+
   // Returned JSX
-
-  // TOFIX : Remplacer le Link par un useNavigate afin de pouvoir décharger la modal de login au clic avant la redirection
-
   return (
     <main className="login-form-container">
       <form id="login-form" className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="login-form">Se connecter</label>
-        <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
-        <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
-        <input type="submit" value="Se connecter" />
-        <Link to="/signup"> Pas encore de compte ? Inscris-toi !</Link>
+        {/* <label htmlFor="login-form">Se connecter</label> */}
+        <input type="email" className="login-input" placeholder="Email" value={email} onChange={handleEmailChange} />
+        <input
+          type="password"
+          className="login-input"
+          placeholder="Password"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <input type="submit" value="Se connecter" className="green-button" />
+        <button className="white-button" onClick={handleSignupClick}>
+          Inscris toi !
+        </button>
         {alertMessage ? <p>{alertMessage}</p> : ""}
       </form>
     </main>

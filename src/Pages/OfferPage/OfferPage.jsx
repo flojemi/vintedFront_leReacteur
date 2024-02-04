@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function OfferPage() {
+export default function OfferPage({ token }) {
   // TODO : Implémenter la gestion de plusieurs images
 
   const navigate = useNavigate();
