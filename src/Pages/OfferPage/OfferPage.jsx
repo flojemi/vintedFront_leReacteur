@@ -32,7 +32,7 @@ export default function OfferPage() {
   }, []);
 
   const handleBuy = () => {
-    navigate(`/payment`);
+    navigate(`/payment`, { state: { id } });
   };
 
   // Returned Jsx
