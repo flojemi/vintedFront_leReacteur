@@ -11,6 +11,7 @@ import LoginPage from "./Pages/LoginPage/LoginPage";
 import SignupPage from "./Pages/SignupPage/SignupPage";
 import OfferPage from "./Pages/OfferPage/OfferPage";
 import PublishPage from "./Pages/PublishPage/PublishPage";
+import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 
 // Components
 import NavBanner from "./Components/NavBanner/NavBanner";
@@ -44,6 +45,7 @@ function App() {
         <Route path="/signup" element={<SignupPage setToken={setToken} />}></Route>
         <Route path="/offer/:id" element={<OfferPage />}></Route>
         <Route path="/publish" element={<PublishPage token={token} setLoginVisible={setLoginVisible} />}></Route>
+        <Route path="/payment" element={<PaymentPage token={token} setLoginVisible={setLoginVisible} />}></Route>
       </Routes>
       {loginVisible && <LoginPage setToken={setToken} setLoginVisible={setLoginVisible} />}
     </Router>

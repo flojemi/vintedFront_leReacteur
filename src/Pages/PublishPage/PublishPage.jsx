@@ -1,15 +1,12 @@
 import "./PublishPage.css";
 
 import { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function PublishPage({ token, setLoginVisible }) {
-  const navigate = useNavigate();
   const fileInputRef = useRef();
 
   useEffect(() => {
-    // TOFIX : Adapter cette portion qui prend le dessus lors d'un refresh de la page
     if (!token) setLoginVisible(true);
   }, []);
 
@@ -72,9 +69,17 @@ export default function PublishPage({ token, setLoginVisible }) {
     }
   };
 
-  // TOFIX : refactoriser le JSX pour afficher le loader correctement
-
   // Returned Jsx
+
+  // TODO : refactoriser en créant deux composants (formulaire et message successful) afin de gagner en lisibilité
+  // TOFIX : en profiter pour retravailler le loader afin qu'il s'affiche correctement
+
+  /* 
+  - Première vérification si le token est présent
+  - Deuxième vérification si une offre a été postée avec succès
+  - Sinon affiche le formulaire
+  */
+
   return (
     <main>
       {!token ? (

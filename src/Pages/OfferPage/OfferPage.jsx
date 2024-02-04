@@ -1,11 +1,13 @@
 import "./OfferPage.css";
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function OfferPage() {
   // TODO : Implémenter la gestion de plusieurs images
+
+  const navigate = useNavigate();
 
   // Get id from params
   const { id } = useParams();
@@ -28,6 +30,10 @@ export default function OfferPage() {
 
     fetchData();
   }, []);
+
+  const handleBuy = () => {
+    navigate(`/payment`);
+  };
 
   // Returned Jsx
   return (
@@ -59,7 +65,9 @@ export default function OfferPage() {
               <p className="offer-name">{offerData.product_name}</p>
               <p>{offerData.product_description}</p>
             </div>
-            <button className="green-button">Acheter</button>
+            <button className="green-button" onClick={handleBuy}>
+              Acheter
+            </button>
           </div>
         </>
       )}

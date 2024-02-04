@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 
 export default function LoginPage({ setToken, setLoginVisible }) {
-  // TODO : ajouter une loading pour montrer à l'utilisateur qu'une action est en cours
+  // TODO : ajouter un loading pour montrer à l'utilisateur qu'une action est en cours
 
   const navigate = useNavigate();
 
@@ -47,6 +47,10 @@ export default function LoginPage({ setToken, setLoginVisible }) {
       console.log("LoginPage - handleSubmit :\n", error);
     }
   };
+
+  // Returned JSX
+
+  // TOFIX : Remplacer le Link par un useNavigate afin de pouvoir décharger la modal de login au clic avant la redirection
 
   return (
     <main className="login-form-container">

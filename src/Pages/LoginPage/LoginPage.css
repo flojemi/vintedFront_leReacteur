@@ -1,4 +1,6 @@
 .login-form-container {
+  animation: fadeInDown 0.15s ease-out;
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -20,4 +22,15 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
