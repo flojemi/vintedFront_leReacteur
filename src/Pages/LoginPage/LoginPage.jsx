@@ -57,7 +57,7 @@ export default function LoginPage({ setToken, setLoginVisible }) {
   return (
     <main className="login-form-container">
       <form id="login-form" className="login-form" onSubmit={handleSubmit}>
-        {/* <label htmlFor="login-form">Se connecter</label> */}
+        <label htmlFor="login-form">Identifiez-vous</label>
         <input type="email" className="login-input" placeholder="Email" value={email} onChange={handleEmailChange} />
         <input
           type="password"

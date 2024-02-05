@@ -103,7 +103,7 @@ export default function PublishPage({ token, setLoginVisible }) {
           <form id="publish-form" className={isLoading ? "loader" : "publish-form"} onSubmit={handleSubmit}>
             <div className="form-part">
               <div className="form-item">
-                <label htmlFor="offerImage">Ajoutez une image</label>
+                <label htmlFor="offerImage">Ajouter une image</label>
                 <input
                   id="offerImage"
                   type="file"
@@ -120,6 +120,7 @@ export default function PublishPage({ token, setLoginVisible }) {
                 <label htmlFor="offerTitle">Titre</label>
                 <input
                   id="offerTitle"
+                  className="publish-input"
                   type="text"
                   placeholder="ex: Chemise Sézane verte"
                   value={offerTitle}
@@ -128,10 +129,12 @@ export default function PublishPage({ token, setLoginVisible }) {
                   }}
                 />
               </div>
+              <div className="separator" />
               <div className="form-item">
                 <label htmlFor="offerDescription">Décris ton article</label>
                 <input
                   id="offerDescription"
+                  className="publish-input"
                   type="text"
                   placeholder="ex: porté quelquefois, taille correctement"
                   value={offerDescription}
@@ -147,6 +150,7 @@ export default function PublishPage({ token, setLoginVisible }) {
                 <label htmlFor="offerBrand">Marque</label>
                 <input
                   id="offerBrand"
+                  className="publish-input"
                   type="text"
                   placeholder="ex: Zara"
                   value={offerBrand}
@@ -155,10 +159,12 @@ export default function PublishPage({ token, setLoginVisible }) {
                   }}
                 />
               </div>
+              <div className="separator" />
               <div className="form-item">
                 <label htmlFor="offerSize">Taille</label>
                 <input
                   id="offerSize"
+                  className="publish-input"
                   type="text"
                   placeholder="ex: L / 40 / 12"
                   value={offerSize}
@@ -167,10 +173,12 @@ export default function PublishPage({ token, setLoginVisible }) {
                   }}
                 />
               </div>
+              <div className="separator" />
               <div className="form-item">
                 <label htmlFor="offerColor">Couleur</label>
                 <input
                   id="offerColor"
+                  className="publish-input"
                   type="text"
                   placeholder="ex: Fushia"
                   value={offerColor}
@@ -179,10 +187,12 @@ export default function PublishPage({ token, setLoginVisible }) {
                   }}
                 />
               </div>
+              <div className="separator" />
               <div className="form-item">
                 <label htmlFor="offerShape">État</label>
                 <input
                   id="offerShape"
+                  className="publish-input"
                   type="text"
                   placeholder="ex: Neuf avec étiquette"
                   value={offerCondition}
@@ -191,10 +201,12 @@ export default function PublishPage({ token, setLoginVisible }) {
                   }}
                 />
               </div>
+              <div className="separator" />
               <div className="form-item">
                 <label htmlFor="offerPlace">Lieu</label>
                 <input
                   id="offerPlace"
+                  className="publish-input"
                   type="text"
                   placeholder="ex: Paris"
                   value={offerPlace}
@@ -210,6 +222,7 @@ export default function PublishPage({ token, setLoginVisible }) {
                 <label htmlFor="offerPrice">Prix</label>
                 <input
                   id="offerPrice"
+                  className="publish-input"
                   type="text"
                   placeholder="0,00 €"
                   value={offerPrice}
@@ -220,7 +233,7 @@ export default function PublishPage({ token, setLoginVisible }) {
               </div>
             </div>
 
-            <input type="submit" value="Ajouter" />
+            <input type="submit" className="green-button" value="Ajouter" />
           </form>
         </>
       )}

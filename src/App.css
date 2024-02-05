@@ -30,3 +30,37 @@
     transform: rotate(0deg);
   }
 }
+
+.green-button {
+  display: inline-block;
+  height: 30px;
+  padding: 0 20px;
+
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  color: white;
+
+  background-color: #027782;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.white-button {
+  display: inline-block;
+  height: 30px;
+  padding: 0 20px;
+
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  color: #027782;
+
+  background-color: white;
+  border: 1px solid #027782;
+  border-radius: 5px;
+}
+
+.separator {
+  border: 0.5px solid rgba(182, 182, 182, 0.415);
+}

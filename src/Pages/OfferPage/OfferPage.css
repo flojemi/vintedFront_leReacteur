@@ -52,25 +52,6 @@
   justify-content: space-between;
 }
 
-.green-button {
-  display: inline-block;
-  height: 30px;
-  padding: 0 20px;
-
-  text-align: center;
-  line-height: 30px;
-  text-decoration: none;
-  color: white;
-
-  background-color: #027782;
-  border: 1px solid white;
-  border-radius: 5px;
-}
-
-.separator {
-  border: 1px solid rgba(182, 182, 182, 0.415);
-}
-
 .key-detail {
   color: rgba(182, 182, 182, 0.802);
 }
