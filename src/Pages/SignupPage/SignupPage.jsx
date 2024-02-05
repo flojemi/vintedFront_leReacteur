@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default function SignupPage({ setToken }) {
+export default function SignupPage({ setToken, setLoginVisible }) {
   const navigate = useNavigate();
 
   // Setup states
@@ -18,6 +18,10 @@ export default function SignupPage({ setToken }) {
   const [alertMessage, setAlertMessage] = useState("");
 
   // Handle Functions
+  const handleLoginClick = () => {
+    setLoginVisible(true);
+  };
+
   const handleUsernameChange = (event) => {
     if (!username) setAlertMessage("");
     setUsername(event.target.value);
@@ -76,21 +80,43 @@ export default function SignupPage({ setToken }) {
         <>
           <p>S'inscrire</p>
           <form onSubmit={handleSubmit} className="form-itself">
-            <input type="text" placeholder="Nom d'utilisateur" value={username} onChange={handleUsernameChange} />
-            <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
-            <input type="password" placeholder="Mot de passe" value={password} onChange={handlePasswordChange} />
+            <input
+              type="text"
+              placeholder="Nom d'utilisateur"
+              className="signup-input"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="signup-input"
+              value={email}
+              onChange={handleEmailChange}
+            />
+            <input
+              type="password"
+              placeholder="Mot de passe"
+              className="signup-input"
+              value={password}
+              onChange={handlePasswordChange}
+            />
 
             <div className="newsletter_container">
               <input type="checkbox" id="newsletter" checked={newsletter} onChange={handleNewsletterChange} />
-              <label htmlFor="newsletter">S'inscrire à le newsletter</label>
+              <label htmlFor="newsletter">S'inscrire à notre newsletter</label>
             </div>
+            <p className="signup-warning">
+              En m'inscrivant, je souscris sans réserves aux CGU. Je certifie également avoir plus de 18 ans.
+            </p>
 
-            <input type="submit" value="Valider l'inscription" />
+            <input type="submit" value="Valider l'inscription" className="green-button" />
 
-            <p>En m'inscrivant, je souscris sans réserves aux CGU. Je certifie également avoir plus de 18 ans.</p>
             {alertMessage ? <p>{alertMessage}</p> : ""}
 
-            <Link to="/login"> Tu as déjà un compte ? Connecte toi !</Link>
+            <button className="login-redirection white-button" onClick={handleLoginClick}>
+              Tu as déjà un compte ? Connecte toi !
+            </button>
           </form>
         </>
       )}

@@ -81,7 +81,7 @@ export default function PublishPage({ token, setLoginVisible }) {
   */
 
   return (
-    <main>
+    <main className="PublishPage-container">
       {!token ? (
         ""
       ) : publishSuccessful ? (
@@ -96,130 +96,133 @@ export default function PublishPage({ token, setLoginVisible }) {
           </button>
         </div>
       ) : (
-        <form id="publish-form" className={isLoading ? "loader" : "publish-form"} onSubmit={handleSubmit}>
-          <label htmlFor="publish-form">Vends ton article</label>
+        <>
+          <label htmlFor="publish-form" className="title">
+            Vends ton article
+          </label>
+          <form id="publish-form" className={isLoading ? "loader" : "publish-form"} onSubmit={handleSubmit}>
+            <div className="form-part">
+              <div className="form-item">
+                <label htmlFor="offerImage">Ajoutez une image</label>
+                <input
+                  id="offerImage"
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={(event) => {
+                    setOfferImage(event.target.files[0]);
+                  }}
+                />
+              </div>
+            </div>
 
-          <div className="form-part">
-            <div className="form-item">
-              <label htmlFor="offerImage">Ajoutez une image</label>
-              <input
-                id="offerImage"
-                type="file"
-                ref={fileInputRef}
-                onChange={(event) => {
-                  setOfferImage(event.target.files[0]);
-                }}
-              />
+            <div className="form-part">
+              <div className="form-item">
+                <label htmlFor="offerTitle">Titre</label>
+                <input
+                  id="offerTitle"
+                  type="text"
+                  placeholder="ex: Chemise Sézane verte"
+                  value={offerTitle}
+                  onChange={(event) => {
+                    setOfferTitle(event.target.value);
+                  }}
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="offerDescription">Décris ton article</label>
+                <input
+                  id="offerDescription"
+                  type="text"
+                  placeholder="ex: porté quelquefois, taille correctement"
+                  value={offerDescription}
+                  onChange={(event) => {
+                    setOfferDescription(event.target.value);
+                  }}
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="form-part">
-            <div className="form-item">
-              <label htmlFor="offerTitle">Titre</label>
-              <input
-                id="offerTitle"
-                type="text"
-                placeholder="ex: Chemise Sézane verte"
-                value={offerTitle}
-                onChange={(event) => {
-                  setOfferTitle(event.target.value);
-                }}
-              />
+            <div className="form-part">
+              <div className="form-item">
+                <label htmlFor="offerBrand">Marque</label>
+                <input
+                  id="offerBrand"
+                  type="text"
+                  placeholder="ex: Zara"
+                  value={offerBrand}
+                  onChange={(event) => {
+                    setOfferBrand(event.target.value);
+                  }}
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="offerSize">Taille</label>
+                <input
+                  id="offerSize"
+                  type="text"
+                  placeholder="ex: L / 40 / 12"
+                  value={offerSize}
+                  onChange={(event) => {
+                    setOfferSize(event.target.value);
+                  }}
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="offerColor">Couleur</label>
+                <input
+                  id="offerColor"
+                  type="text"
+                  placeholder="ex: Fushia"
+                  value={offerColor}
+                  onChange={(event) => {
+                    setOfferColor(event.target.value);
+                  }}
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="offerShape">État</label>
+                <input
+                  id="offerShape"
+                  type="text"
+                  placeholder="ex: Neuf avec étiquette"
+                  value={offerCondition}
+                  onChange={(event) => {
+                    setOfferCondition(event.target.value);
+                  }}
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="offerPlace">Lieu</label>
+                <input
+                  id="offerPlace"
+                  type="text"
+                  placeholder="ex: Paris"
+                  value={offerPlace}
+                  onChange={(event) => {
+                    setOfferPlace(event.target.value);
+                  }}
+                />
+              </div>
             </div>
-            <div className="form-item">
-              <label htmlFor="offerDescription">Décris ton article</label>
-              <input
-                id="offerDescription"
-                type="text"
-                placeholder="ex: porté quelquefois, taille correctement"
-                value={offerDescription}
-                onChange={(event) => {
-                  setOfferDescription(event.target.value);
-                }}
-              />
-            </div>
-          </div>
 
-          <div className="form-part">
-            <div className="form-item">
-              <label htmlFor="offerBrand">Marque</label>
-              <input
-                id="offerBrand"
-                type="text"
-                placeholder="ex: Zara"
-                value={offerBrand}
-                onChange={(event) => {
-                  setOfferBrand(event.target.value);
-                }}
-              />
+            <div className="form-part">
+              <div className="form-item">
+                <label htmlFor="offerPrice">Prix</label>
+                <input
+                  id="offerPrice"
+                  type="text"
+                  placeholder="0,00 €"
+                  value={offerPrice}
+                  onChange={(event) => {
+                    setOfferPrice(event.target.value);
+                  }}
+                />
+              </div>
             </div>
-            <div className="form-item">
-              <label htmlFor="offerSize">Taille</label>
-              <input
-                id="offerSize"
-                type="text"
-                placeholder="ex: L / 40 / 12"
-                value={offerSize}
-                onChange={(event) => {
-                  setOfferSize(event.target.value);
-                }}
-              />
-            </div>
-            <div className="form-item">
-              <label htmlFor="offerColor">Couleur</label>
-              <input
-                id="offerColor"
-                type="text"
-                placeholder="ex: Fushia"
-                value={offerColor}
-                onChange={(event) => {
-                  setOfferColor(event.target.value);
-                }}
-              />
-            </div>
-            <div className="form-item">
-              <label htmlFor="offerShape">État</label>
-              <input
-                id="offerShape"
-                type="text"
-                placeholder="ex: Neuf avec étiquette"
-                value={offerCondition}
-                onChange={(event) => {
-                  setOfferCondition(event.target.value);
-                }}
-              />
-            </div>
-            <div className="form-item">
-              <label htmlFor="offerPlace">Lieu</label>
-              <input
-                id="offerPlace"
-                type="text"
-                placeholder="ex: Paris"
-                value={offerPlace}
-                onChange={(event) => {
-                  setOfferPlace(event.target.value);
-                }}
-              />
-            </div>
-          </div>
 
-          <div className="form-part">
-            <div className="form-item">
-              <label htmlFor="offerPrice">Prix</label>
-              <input
-                id="offerPrice"
-                type="text"
-                placeholder="0,00 €"
-                value={offerPrice}
-                onChange={(event) => {
-                  setOfferPrice(event.target.value);
-                }}
-              />
-            </div>
-          </div>
-
-          <input type="submit" value="Ajouter" />
-        </form>
+            <input type="submit" value="Ajouter" />
+          </form>
+        </>
       )}
     </main>
   );

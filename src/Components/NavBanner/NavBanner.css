@@ -13,8 +13,8 @@
   align-items: center;
   gap: 20px;
 
-  border: 1px solid grey;
   background-color: white;
+  box-shadow: 0px 2px 4px rgba(66, 66, 66, 0.3);
 }
 
 .search-bar {

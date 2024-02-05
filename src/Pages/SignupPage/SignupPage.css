@@ -1,14 +1,13 @@
 .signup-form-container {
-  height: 400px;
   width: 400px;
   margin: 70px auto;
-  border: 1px solid pink;
+  padding: 20px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .form-itself {
@@ -16,7 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .newsletter_container {
@@ -24,4 +23,26 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
+}
+
+.signup-input {
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid pink;
+  width: 250px;
+  height: 30px;
+}
+
+.signup-warning {
+  color: grey;
+  font-size: 14px;
+}
+
+.login-redirection {
+  text-decoration: none;
+  color: #017782;
+}
+
+.login-redirection:hover {
+  text-decoration: underline;
 }
