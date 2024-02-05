@@ -27,7 +27,7 @@ export default function CheckoutForm({ offerId }) {
     const fetchData = async () => {
       console.log("test");
       try {
-        const { data } = await axios.get(`http://site--backvinted-lereacteur--s9nznht574vq.code.run/offer/${offerId}`);
+        const { data } = await axios.get(`https://site--backvinted-lereacteur--s9nznht574vq.code.run/offer/${offerId}`);
         console.log(data.data);
         setOfferData(data.data);
         setIsLoading(false);
@@ -58,7 +58,7 @@ export default function CheckoutForm({ offerId }) {
       const stripeToken = stripeResponse.token.id;
 
       // Transmet le token au back pour vérifications
-      const backResponse = await axios.post("http://site--backvinted-lereacteur--s9nznht574vq.code.run/pay", {
+      const backResponse = await axios.post("https://site--backvinted-lereacteur--s9nznht574vq.code.run/pay", {
         stripeToken,
         userToken,
         offerData,

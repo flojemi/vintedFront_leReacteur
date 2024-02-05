@@ -20,7 +20,7 @@ export default function OfferPage({ token }) {
   useEffect(() => {
     const fetchData = async function () {
       try {
-        const { data } = await axios.get(`http://site--backvinted-lereacteur--s9nznht574vq.code.run/offer/${id}`);
+        const { data } = await axios.get(`https://site--backvinted-lereacteur--s9nznht574vq.code.run/offer/${id}`);
         setOfferData(data.data);
         setIsLoading(false);
       } catch (error) {

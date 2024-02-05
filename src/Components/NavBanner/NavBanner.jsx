@@ -20,7 +20,7 @@ export default function NavBanner({ token, setToken, setLoginVisible }) {
     if (token) {
       const fetchData = async () => {
         try {
-          const { data } = await axios.get(`http://site--backvinted-lereacteur--s9nznht574vq.code.run/user/${token}`);
+          const { data } = await axios.get(`https://site--backvinted-lereacteur--s9nznht574vq.code.run/user/${token}`);
           setUserInfos(data.data);
           setIsLoading(false);
         } catch (error) {
