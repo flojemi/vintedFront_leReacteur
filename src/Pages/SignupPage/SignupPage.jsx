@@ -53,7 +53,7 @@ export default function SignupPage({ setToken, setLoginVisible }) {
     try {
       setIsLoading(true);
 
-      const { data } = await axios.post("http://localhost:3000/user/signup", {
+      const { data } = await axios.post("http://site--backvinted-lereacteur--s9nznht574vq.code.run/user/signup", {
         username,
         email,
         password,

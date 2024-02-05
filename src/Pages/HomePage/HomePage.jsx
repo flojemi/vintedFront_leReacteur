@@ -20,7 +20,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/offers");
+        const { data } = await axios.get("http://site--backvinted-lereacteur--s9nznht574vq.code.run/offers");
         setOffersData(data.data);
         setIsLoading(false);
       } catch (error) {

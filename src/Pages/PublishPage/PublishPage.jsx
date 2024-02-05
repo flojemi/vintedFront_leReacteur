@@ -43,7 +43,7 @@ export default function PublishPage({ token, setLoginVisible }) {
       formData.append("city", offerPlace);
 
       // Exécution de la requête
-      await axios.post("http://localhost:3000/offer/publish", formData, {
+      await axios.post("http://site--backvinted-lereacteur--s9nznht574vq.code.run/offer/publish", formData, {
         headers: {
           authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
